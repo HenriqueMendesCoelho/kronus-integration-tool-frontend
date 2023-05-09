@@ -1,0 +1,26 @@
+<div class="container text-white">
+  <div class="row justify-content-center align-content-center">
+    <app-home-title class="col-auto" />
+    <div class="col-12">
+      <app-home-toolbar />
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 bg-grey-mid">
+        <ng-container matColumnDef="name">
+          <th class="text-white" mat-header-cell *matHeaderCellDef> Nome </th>
+          <td class="text-white" mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="key">
+          <th class="text-white" mat-header-cell *matHeaderCellDef> ApiKey </th>
+          <td class="text-white" mat-cell *matCellDef="let element"> {{element.key}} </td>
+        </ng-container>
+        <ng-container matColumnDef="action">
+          <th class="text-white" mat-header-cell *matHeaderCellDef> </th>
+          <td class="text-white" mat-cell *matCellDef="let element"> <button mat-icon-button class="text-white">
+              <mat-icon>delete</mat-icon>
+            </button> </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+</div>

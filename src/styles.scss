@@ -1,1 +1,95 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  --primary: #00f6ff;
+  --grey-dark: #0b0e14;
+  --grey-dark2: #1f2531;
+  --grey-mid: #293244;
+  --grey-mid2: #343c4c;
+  --light-grey: #f0ffff94;
+  --light-grey2: #f0ffffde;
+  --light-blue: #9bf6f9;
+  --shadow: #00000056;
+  --dark-alt: #334155;
+  --dark-alt2: rgb(98, 114, 139) 5;
+}
+
+.bg-kb-primary {
+  background: var(--primary) !important;
+}
+
+.text-kb-primary {
+  color: var(--primary) !important;
+}
+
+.bg-grey-dark {
+  background: var(--grey-dark) !important;
+}
+
+.text-grey-dark {
+  color: var(--grey-dark) !important;
+}
+
+.bg-grey-dark2 {
+  background: var(--grey-dark2) !important;
+}
+
+.text-grey-dark2 {
+  color: var(--grey-dark2) !important;
+}
+
+.bg-grey-mid {
+  background: var(--grey-mid) !important;
+}
+
+.text-grey-mid {
+  color: var(--grey-mid) !important;
+}
+
+.bg-grey-mid2 {
+  background: var(--grey-mid2) !important;
+}
+
+.text-grey-mid2 {
+  color: var(--grey-mid2) !important;
+}
+
+.shadow-kb {
+  box-shadow: 0 5px 10px var(--shadow) !important;
+}
+
+.row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.mat-mdc-snack-bar-container {
+  &.snack-success {
+    --mdc-snackbar-container-color: #21ba45;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+    --mat-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-size: 14px;
+    --mdc-snackbar-supporting-text-weight: 500;
+  }
+
+  &.snack-error {
+    --mdc-snackbar-container-color: red;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+    --mat-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-size: 14px;
+    --mdc-snackbar-supporting-text-weight: 500;
+  }
+}
