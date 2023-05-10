@@ -6,6 +6,7 @@ import { LayoutWithoutNavbarComponent } from './layout/layout-without-navbar/lay
 
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
     path: '',
     component: LayoutWithNavbarComponent,
     children: [{ path: 'home', component: HomeComponent }],
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
   },
 ];
 
