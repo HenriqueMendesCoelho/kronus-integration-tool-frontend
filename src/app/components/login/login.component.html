@@ -11,21 +11,29 @@
       <p class="display-6 col-auto text-white">Login</p>
       <mat-form-field class="col-10 p-0">
         <mat-label>Usuário</mat-label>
-        <input matInput type="user" [(ngModel)]="email">
-        <button *ngIf="email" matSuffix mat-icon-button aria-label="Clear" (click)="email=''">
+        <input matInput type="text" [formControl]="userFormControl" [(ngModel)]="username">
+        <mat-error *ngIf="userFormControl.hasError('required')">
+          obrigatório
+        </mat-error>
+        <button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
       <mat-form-field class="col-10 p-0" appearance="fill">
         <mat-label>Digite sua senha</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <input matInput [type]="hidePassword ? 'password' : 'text'" [formControl]="passwordFormControl"
+          [(ngModel)]="password">
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          obrigatório
+        </mat-error>
+        <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hidePassword">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
+      <div class="col-12 my-3"></div>
       <div class="row justify-content-center">
-        <button class="col-auto" mat-raised-button color="primary">ENTRAR</button>
+        <button (click)="login()" class="col-auto" mat-raised-button color="primary">ENTRAR</button>
       </div>
     </div>
   </div>
