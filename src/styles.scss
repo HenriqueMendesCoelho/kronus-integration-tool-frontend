@@ -153,3 +153,24 @@ body {
     --mdc-snackbar-supporting-text-weight: 500;
   }
 }
+
+mat-tooltip-component .mdc-tooltip__surface {
+  background-color: var(--grey-dark2);
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--grey-mid);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--light-grey2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--light-grey);
+}
