@@ -5,7 +5,6 @@ import { LayoutWithNavbarComponent } from './layout/layout-with-navbar/layout-wi
 import { LayoutWithoutNavbarComponent } from './layout/layout-without-navbar/layout-without-navbar.component';
 
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
@@ -22,7 +21,13 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutWithNavbarComponent,
-    children: [{ path: 'home', component: HomeComponent }],
+    children: [
+      {
+        path: 'home',
+        loadChildren: () =>
+          import('./components/home/home.module').then((m) => m.HomeModule),
+      },
+    ],
   },
   {
     path: '**',
