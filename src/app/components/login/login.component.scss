@@ -13,16 +13,5 @@
 
 ::ng-deep .mdc-text-field {
   background-color: var(--grey-mid) !important;
-
-  color: #ff4081;
-  color: #f50057;
-  color: #c51162;
-  color: #880e4f;
-  color: #ba68c8;
-
-  color: #e0feff;
-  color: #b3fcff;
-  color: #80fbff;
-  color: #4df9ff;
-  color: #26f7ff;
+  color: var(--primary);
 }
