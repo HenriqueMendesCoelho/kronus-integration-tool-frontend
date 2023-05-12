@@ -13,13 +13,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatDialogModule } from '@angular/material/dialog';
 
 import { LayoutWithNavbarComponent } from './layout/layout-with-navbar/layout-with-navbar.component';
 import { LayoutWithoutNavbarComponent } from './layout/layout-without-navbar/layout-without-navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { DialogCreateApikeyComponent } from './components/home/home-toolbar/dialog-create-apikey/dialog-create-apikey.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +26,6 @@ import { DialogCreateApikeyComponent } from './components/home/home-toolbar/dial
     LayoutWithoutNavbarComponent,
     LoginComponent,
     NavbarComponent,
-    DialogCreateApikeyComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +40,6 @@ import { DialogCreateApikeyComponent } from './components/home/home-toolbar/dial
     FormsModule,
     ReactiveFormsModule,
     MatTooltipModule,
-    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
