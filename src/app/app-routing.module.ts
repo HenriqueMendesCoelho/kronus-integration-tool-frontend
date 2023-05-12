@@ -31,7 +31,10 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: NotFoundComponent,
+    loadChildren: () =>
+      import('./components/not-found/not-found.module').then(
+        (m) => m.NotFoundModule
+      ),
   },
 ];
 

@@ -18,7 +18,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LayoutWithNavbarComponent } from './layout/layout-with-navbar/layout-with-navbar.component';
 import { LayoutWithoutNavbarComponent } from './layout/layout-without-navbar/layout-without-navbar.component';
 import { LoginComponent } from './components/login/login.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DialogCreateApikeyComponent } from './components/home/home-toolbar/dialog-create-apikey/dialog-create-apikey.component';
 
@@ -28,7 +27,6 @@ import { DialogCreateApikeyComponent } from './components/home/home-toolbar/dial
     LayoutWithNavbarComponent,
     LayoutWithoutNavbarComponent,
     LoginComponent,
-    NotFoundComponent,
     NavbarComponent,
     DialogCreateApikeyComponent,
   ],
