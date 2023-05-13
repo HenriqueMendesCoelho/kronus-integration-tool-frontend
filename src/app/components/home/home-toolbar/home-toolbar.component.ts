@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogCreateApikeyComponent } from './dialog-create-apikey/dialog-create-apikey.component';
 
 @Component({
   selector: 'app-home-toolbar',
@@ -7,13 +8,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./home-toolbar.component.scss'],
 })
 export class HomeToolbarComponent {
-  constructor(private _snackBar: MatSnackBar) {}
-  createKey() {
-    const snack = this._snackBar;
-    snack.open('Nova API KEY gerada com sucesso', '', {
-      duration: 3000,
-      verticalPosition: 'top',
-      panelClass: ['snack-success'],
+  constructor(private dialog: MatDialog) {}
+
+  @Output()
+  refresh = new EventEmitter();
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogCreateApikeyComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.refresh.emit();
+      }
     });
   }
 }

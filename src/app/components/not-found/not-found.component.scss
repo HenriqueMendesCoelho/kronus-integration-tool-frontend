@@ -1,0 +1,13 @@
+.text-404 {
+  font-size: 30vh;
+  line-height: 30vh;
+  color: white;
+}
+
+.left-img-login {
+  border-radius: 50%;
+  &:hover {
+    box-shadow: 0px 0px 30px -14px var(--primary);
+    transition: 0.2s ease-in-out;
+  }
+}

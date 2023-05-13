@@ -1,0 +1,17 @@
+.left-img-login {
+  border-radius: 50%;
+  &:hover {
+    box-shadow: 0px 0px 30px -14px var(--primary);
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.divisor {
+  border-bottom: 1px solid white;
+  opacity: 10%;
+}
+
+::ng-deep .mdc-text-field {
+  background-color: var(--grey-mid) !important;
+  color: var(--primary);
+}

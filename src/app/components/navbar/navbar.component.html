@@ -1,0 +1,22 @@
+<mat-toolbar class="text-white bg-grey-dark2">
+  <button mat-icon-button disabled class="text-kb-primary" aria-label="menu toolbar btn">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a class="anchor-name-kit" routerLink="home">
+    <span>Kronus Integration Tool</span>
+  </a>
+  <a routerLink="home" routerLinkActive="active" class="ms-1"><button mat-button class="text-kb-primary"
+      aria-label="menu home btn">
+      Home
+      <mat-icon>home</mat-icon>
+    </button></a>
+  <a routerLink="security" routerLinkActive="active"><button mat-button class="text-kb-primary"
+      aria-label="menu home btn">
+      Segurança
+      <mat-icon>lock</mat-icon>
+    </button></a>
+  <span style="flex: 1 1 auto"></span>
+  <button (click)="logout()" mat-icon-button class="text-kb-primary" aria-label="menu logout btn">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
