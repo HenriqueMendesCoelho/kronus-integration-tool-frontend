@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { UserServiceService } from 'src/app/services/userService/user-service.service';
+import { AuthService } from 'src/app/auth/service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import { UserServiceService } from 'src/app/services/userService/user-service.se
 export class LoginComponent {
   constructor(
     private router: Router,
-    private userService: UserServiceService,
+    private authService: AuthService,
     private snackBar: MatSnackBar
   ) {}
 
@@ -27,7 +27,7 @@ export class LoginComponent {
       return;
     }
 
-    this.userService
+    this.authService
       .login({
         username: this.username,
         password: this.password,
