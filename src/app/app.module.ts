@@ -14,6 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+import { AuthModule } from './auth/auth.module';
+
 import { LayoutWithNavbarComponent } from './layout/layout-with-navbar/layout-with-navbar.component';
 import { LayoutWithoutNavbarComponent } from './layout/layout-without-navbar/layout-without-navbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -29,7 +31,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -40,6 +41,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     FormsModule,
     ReactiveFormsModule,
     MatTooltipModule,
+    AuthModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

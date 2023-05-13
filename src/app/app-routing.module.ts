@@ -5,7 +5,7 @@ import { LayoutWithNavbarComponent } from './layout/layout-with-navbar/layout-wi
 import { LayoutWithoutNavbarComponent } from './layout/layout-without-navbar/layout-without-navbar.component';
 
 import { LoginComponent } from './components/login/login.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { authGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -21,6 +21,7 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutWithNavbarComponent,
+    canMatch: [authGuard],
     children: [
       {
         path: 'home',
