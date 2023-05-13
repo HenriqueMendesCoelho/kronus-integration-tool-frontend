@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
     this.apiKeyService.list().subscribe({
       next: (res) => {
         this.dataSource = res.map((e) => {
-          return { name: e.name, key: e.key || '' };
+          return { name: e.name, key: e.key || '', hide: true };
         });
         this.snackSuccess('Tabela atualizada com sucesso.');
       },
