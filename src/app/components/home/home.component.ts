@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.apiKeyService.list().subscribe({
       next: (res) => {
         this.dataSource = res.map((e) => {
-          return { name: e.name, key: e.key || '' };
+          return { name: e.name, key: e.key || '', hide: true };
         });
       },
       error: () => {
@@ -64,6 +64,12 @@ export class HomeComponent implements OnInit {
 
     navigator.clipboard.writeText(key);
     this.snackSuccess('Copiado para área de transferencia');
+  }
+  hideKey(row: { key: string; hide: boolean }) {
+    if (row.hide) {
+      return row.key.replace(/./g, '•') + '•'.repeat(70);
+    }
+    return row.key;
   }
 
   snackSuccess(msg: string) {
