@@ -33,6 +33,7 @@ export class AuthInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         if (error instanceof HttpErrorResponse) {
           if (error.status === 403) {
+            localStorage.clear();
             this.router.navigate(['']);
           }
         }
