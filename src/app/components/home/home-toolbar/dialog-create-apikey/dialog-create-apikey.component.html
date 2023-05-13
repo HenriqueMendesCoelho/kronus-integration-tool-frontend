@@ -3,7 +3,7 @@
   <div mat-dialog-content>
     <mat-form-field appearance="fill">
       <mat-label>Nome da key</mat-label>
-      <input matInput [(ngModel)]="name" [formControl]="nameFormControl">
+      <input (keyup.enter)="create()" matInput [(ngModel)]="name" [formControl]="nameFormControl">
       <mat-error *ngIf="nameFormControl.hasError('required')">
         obrigatório
       </mat-error>

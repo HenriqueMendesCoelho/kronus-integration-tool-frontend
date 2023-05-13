@@ -21,8 +21,8 @@
       </mat-form-field>
       <mat-form-field class="col-10 p-0" appearance="fill">
         <mat-label>Digite sua senha</mat-label>
-        <input matInput [type]="hidePassword ? 'password' : 'text'" [formControl]="passwordFormControl"
-          [(ngModel)]="password">
+        <input (keyup.enter)="login()" matInput [type]="hidePassword ? 'password' : 'text'"
+          [formControl]="passwordFormControl" [(ngModel)]="password">
         <mat-error *ngIf="passwordFormControl.hasError('required')">
           obrigatório
         </mat-error>
