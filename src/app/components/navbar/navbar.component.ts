@@ -12,4 +12,7 @@ export class NavbarComponent {
     localStorage.clear();
     this.router.navigate(['/']);
   }
+  showDesktopText() {
+    return window.innerWidth >= 992;
+  }
 }

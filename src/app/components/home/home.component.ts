@@ -67,9 +67,14 @@ export class HomeComponent implements OnInit {
   }
   hideKey(row: { key: string; hide: boolean }) {
     if (row.hide) {
-      return row.key.replace(/./g, '•') + '•'.repeat(70);
+      return this.isDesktop()
+        ? row.key.replace(/./g, '•') + '•'.repeat(70)
+        : row.key.replace(/./g, '•');
     }
     return row.key;
+  }
+  isDesktop() {
+    return window.innerWidth >= 992;
   }
 
   snackSuccess(msg: string) {
