@@ -1,4 +1,4 @@
-FROM arm64v8/node:18.15-alpine as build-stage
+FROM arm64v8/node:18.16-slim as build-stage
 
 WORKDIR /app
 
