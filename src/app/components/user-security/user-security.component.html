@@ -1,0 +1,60 @@
+<div class="row text-white justify-content-center">
+  <div class="row justify-content-center">
+    <app-page-title class="col-auto" title="Painel de segurança" icon="lock" />
+  </div>
+  <div class="col-4 row bg-grey-dark2 py-3 justify-content-center" style="border-radius: 15px;">
+    <div class="col-auto h3">Alterar senha</div>
+    <div class="col-10 row justify-content-center" [formGroup]="updateUserGroup">
+
+      <mat-form-field class="col-12">
+        <mat-label>Senha Atual</mat-label>
+        <input matInput type="text" formControlName="passwordFormControl" type="password">
+        <mat-error *ngIf="updateUserGroup.controls['passwordFormControl'].hasError('required')">
+          Obrigatório
+        </mat-error>
+        <button *ngIf="updateUserGroup.controls['passwordFormControl'].value" matSuffix mat-icon-button
+          aria-label="Clear" (click)="updateUserGroup.patchValue({passwordFormControl: ''})">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field class="col-12">
+        <mat-label>Nova Senha</mat-label>
+        <input matInput type="text" [formControl]="updateUserGroup.controls['newPasswordFormControl']" type="password">
+        <mat-error *ngIf="updateUserGroup.controls['newPasswordFormControl'].hasError('required')">
+          Obrigatório
+        </mat-error>
+        <mat-error *ngIf="updateUserGroup.controls['newPasswordFormControl'].hasError('pattern')">
+          Deve conter no mínimo 20, maiúsculo, minúsculo e caractere especial.
+        </mat-error>
+        <button *ngIf="updateUserGroup.controls['newPasswordFormControl'].value" matSuffix mat-icon-button
+          aria-label="Clear" (click)="updateUserGroup.patchValue({newPasswordFormControl: ''})">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field class="col-12">
+        <mat-label>Confirme Nova Senha</mat-label>
+        <input matInput type="text" [formControl]="updateUserGroup.controls['newPasswordConfirmFormControl']"
+          type="password">
+        <mat-error *ngIf="updateUserGroup.controls['newPasswordConfirmFormControl'].hasError('required')">
+          Obrigatório
+        </mat-error>
+
+        <mat-error
+          *ngIf="updateUserGroup.controls['newPasswordConfirmFormControl'].hasError('passwordsMatch') && updateUserGroup.controls['newPasswordConfirmFormControl'].dirty">
+          Deve coincidir com a nova senha
+        </mat-error>
+        <button *ngIf="updateUserGroup.controls['newPasswordConfirmFormControl'].value" matSuffix mat-icon-button
+          aria-label="Clear" (click)="updateUserGroup.patchValue({newPasswordConfirmFormControl: ''})">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="row justify-content-center">
+        <div class="col-auto"><button mat-raised-button style="background-color: chartreuse;"
+            (click)="update()">Salvar</button></div>
+        <div class="col-auto"><button mat-raised-button style="background-color: red;">Cancelar</button></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeTitleComponent } from './home-title.component';
+import { PageTitleComponent } from './page-title.component';
 
-describe('HomeTitleComponent', () => {
-  let component: HomeTitleComponent;
-  let fixture: ComponentFixture<HomeTitleComponent>;
+describe('PageTitleComponent', () => {
+  let component: PageTitleComponent;
+  let fixture: ComponentFixture<PageTitleComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeTitleComponent]
+      declarations: [PageTitleComponent]
     });
-    fixture = TestBed.createComponent(HomeTitleComponent);
+    fixture = TestBed.createComponent(PageTitleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

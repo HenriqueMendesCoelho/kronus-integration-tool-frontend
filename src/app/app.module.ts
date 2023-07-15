@@ -19,7 +19,8 @@ import { AuthModule } from './auth/auth.module';
 import { LayoutWithNavbarComponent } from './layout/layout-with-navbar/layout-with-navbar.component';
 import { LayoutWithoutNavbarComponent } from './layout/layout-without-navbar/layout-without-navbar.component';
 import { LoginComponent } from './components/login/login.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './layout/layout-with-navbar/navbar/navbar.component';
+import { ContainerStandardComponent } from './components/shared/container-standard/container-standard.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LayoutWithoutNavbarComponent,
     LoginComponent,
     NavbarComponent,
+    ContainerStandardComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserType } from './userTypes';
+import { UserUpdateType } from './userTypes';
 import { environment } from 'environment';
 
 @Injectable({
@@ -12,7 +12,10 @@ export class UserServiceService {
 
   constructor(private client: HttpClient) {}
 
-  update(user: UserType): Observable<UserType> {
-    return this.client.put<UserType>(`${this.BASE_URL}/login`, user);
+  update(user: UserUpdateType): Observable<UserUpdateType> {
+    return this.client.patch<UserUpdateType>(
+      `${this.BASE_URL}/api/v1/user`,
+      user
+    );
   }
 }

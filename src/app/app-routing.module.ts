@@ -28,6 +28,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./components/home/home.module').then((m) => m.HomeModule),
       },
+      {
+        path: 'security',
+        loadComponent: () =>
+          import('./components/user-security/user-security.component').then(
+            (c) => c.UserSecurityComponent
+          ),
+      },
     ],
   },
   {

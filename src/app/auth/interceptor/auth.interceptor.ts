@@ -32,7 +32,7 @@ export class AuthInterceptor implements HttpInterceptor {
       }),
       catchError((error: HttpErrorResponse) => {
         if (error instanceof HttpErrorResponse) {
-          if (error.status === 403) {
+          if (error.status === 403 && error.error.message !== 'Action Denied') {
             localStorage.clear();
             this.router.navigate(['']);
           }

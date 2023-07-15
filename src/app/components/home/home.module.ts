@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
-import { HomeTitleComponent } from './home-title/home-title.component';
 import { HomeToolbarComponent } from './home-toolbar/home-toolbar.component';
 import { DialogCreateApikeyComponent } from './home-toolbar/dialog-create-apikey/dialog-create-apikey.component';
+
+import { PageTitleModule } from '../shared/page-title/page-title.module';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,11 +21,12 @@ import { HomeRoutingRoutingModule } from './home.routing.module';
 @NgModule({
   declarations: [
     HomeComponent,
-    HomeTitleComponent,
     HomeToolbarComponent,
     DialogCreateApikeyComponent,
   ],
   imports: [
+    PageTitleModule,
+    //Angular Material
     CommonModule,
     MatIconModule,
     MatToolbarModule,
