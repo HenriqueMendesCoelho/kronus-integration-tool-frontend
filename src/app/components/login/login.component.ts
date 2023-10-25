@@ -1,20 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/service/auth.service';
+import { TokenService } from 'src/app/services/tokenService/token.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
     private snackBar: MatSnackBar
   ) {}
+
+  ngOnInit(): void {
+    if (new TokenService().isLoged()) {
+      this.router.navigate(['/home']);
+    }
+  }
 
   username: string = '';
   userFormControl = new FormControl('', [Validators.required]);
