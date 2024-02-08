@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (res) => {
           localStorage.setItem('auth-tk', res.access_token);
-          localStorage.setItem('expires', res.expires?.toString() || '');
           this.router.navigate(['/home']);
         },
         error: () => {

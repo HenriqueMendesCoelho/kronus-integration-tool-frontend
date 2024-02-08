@@ -7,7 +7,7 @@ import jwtDecode from 'jwt-decode';
 export class TokenService {
   constructor() {}
 
-  decode(token: string): { exp: number } | undefined {
+  decode(token?: string | null): { exp: number } | undefined {
     if (!token) {
       return;
     }
@@ -17,22 +17,16 @@ export class TokenService {
 
   isLoged(): boolean {
     const token = localStorage.getItem('auth-tk');
-
-    if (!token) {
-      return false;
-    }
-
     const decodedToken = this.decode(token);
-
     if (!decodedToken) {
       return false;
     }
 
-    const until = decodedToken.exp;
+    const until = decodedToken.exp / 1000;
     const dateNow = Math.floor(Date.now() / 1000);
     const diff = until - dateNow;
     const result = diff > 0 ? Math.floor(diff / 60) : 0;
 
-    return result > 0;
+    return result > 2;
   }
 }
