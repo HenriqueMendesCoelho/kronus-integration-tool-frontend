@@ -3,9 +3,9 @@
     <app-page-title class="col-auto" [title]="'Home'" [icon]="'home'" />
   </div>
   <div class="row justify-content-center align-content-center bg-grey-dark2" style="border-radius: 15px;">
-    <div class="col-12 mt-3">
+    <div class="col-12 p-5">
       <app-home-toolbar (refresh)="refresh()" />
-      <div class="table-home mb-3">
+      <div class="table-home">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 bg-grey-mid">
           <ng-container matColumnDef="name">
             <th class="text-white" mat-header-cell *matHeaderCellDef> Nome </th>
