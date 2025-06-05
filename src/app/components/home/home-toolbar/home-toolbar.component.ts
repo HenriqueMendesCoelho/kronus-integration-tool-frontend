@@ -3,9 +3,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogCreateApikeyComponent } from './dialog-create-apikey/dialog-create-apikey.component';
 
 @Component({
-  selector: 'app-home-toolbar',
-  templateUrl: './home-toolbar.component.html',
-  styleUrls: ['./home-toolbar.component.scss'],
+    selector: 'app-home-toolbar',
+    templateUrl: './home-toolbar.component.html',
+    styleUrls: ['./home-toolbar.component.scss'],
+    standalone: false
 })
 export class HomeToolbarComponent {
   constructor(private dialog: MatDialog) {}

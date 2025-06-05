@@ -5,9 +5,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ApiKeyServiceService } from 'src/app/services/apiKeyService/api-key-service.service';
 
 @Component({
-  selector: 'app-dialog-create-apikey',
-  templateUrl: './dialog-create-apikey.component.html',
-  styleUrls: ['./dialog-create-apikey.component.scss'],
+    selector: 'app-dialog-create-apikey',
+    templateUrl: './dialog-create-apikey.component.html',
+    styleUrls: ['./dialog-create-apikey.component.scss'],
+    standalone: false
 })
 export class DialogCreateApikeyComponent {
   constructor(
