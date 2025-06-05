@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -22,31 +22,24 @@ import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './layout/layout-with-navbar/navbar/navbar.component';
 import { ContainerStandardComponent } from './components/shared/container-standard/container-standard.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    LayoutWithNavbarComponent,
-    LayoutWithoutNavbarComponent,
-    LoginComponent,
-    NavbarComponent,
-    ContainerStandardComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSnackBarModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatTooltipModule,
-    AuthModule,
-    AppRoutingModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [
+        AppComponent,
+        LayoutWithNavbarComponent,
+        LayoutWithoutNavbarComponent,
+        LoginComponent,
+        NavbarComponent,
+        ContainerStandardComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatSnackBarModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatTooltipModule,
+        AuthModule,
+        AppRoutingModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
