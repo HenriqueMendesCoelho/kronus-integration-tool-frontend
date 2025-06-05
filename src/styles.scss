@@ -133,21 +133,21 @@ body {
 
 .mat-mdc-snack-bar-container {
   &.snack-success {
-    --mdc-snackbar-container-color: #21ba45;
+    --mat-snackbar-container-color: #21ba45;
     --mat-mdc-snack-bar-button-color: #fff;
-    --mdc-snackbar-supporting-text-color: #fff;
+    --mat-snackbar-supporting-text-color: #fff;
     --mat-snack-bar-button-color: #fff;
-    --mdc-snackbar-supporting-text-size: 14px;
-    --mdc-snackbar-supporting-text-weight: 500;
+    --mat-snackbar-supporting-text-size: 14px;
+    --mat-snackbar-supporting-text-weight: 500;
   }
 
   &.snack-error {
-    --mdc-snackbar-container-color: red;
+    --mat-snackbar-container-color: red;
     --mat-mdc-snack-bar-button-color: #fff;
-    --mdc-snackbar-supporting-text-color: #fff;
+    --mat-snackbar-supporting-text-color: #fff;
     --mat-snack-bar-button-color: #fff;
-    --mdc-snackbar-supporting-text-size: 14px;
-    --mdc-snackbar-supporting-text-weight: 500;
+    --mat-snackbar-supporting-text-size: 14px;
+    --mat-snackbar-supporting-text-weight: 500;
   }
 }
 

@@ -4,15 +4,21 @@
     <mat-form-field appearance="fill">
       <mat-label>Nome da key</mat-label>
       <input (keyup.enter)="create()" matInput [(ngModel)]="name" [formControl]="nameFormControl">
-      <mat-error *ngIf="nameFormControl.hasError('required')">
-        obrigatório
-      </mat-error>
-      <mat-error *ngIf="nameFormControl.hasError('min')">
-        Mínimo 3 caracteres
-      </mat-error>
-      <mat-error *ngIf="nameFormControl.hasError('max')">
-        Máximo 30 caracteres
-      </mat-error>
+      @if (nameFormControl.hasError('required')) {
+        <mat-error>
+          obrigatório
+        </mat-error>
+      }
+      @if (nameFormControl.hasError('min')) {
+        <mat-error>
+          Mínimo 3 caracteres
+        </mat-error>
+      }
+      @if (nameFormControl.hasError('max')) {
+        <mat-error>
+          Máximo 30 caracteres
+        </mat-error>
+      }
     </mat-form-field>
   </div>
   <div mat-dialog-actions>

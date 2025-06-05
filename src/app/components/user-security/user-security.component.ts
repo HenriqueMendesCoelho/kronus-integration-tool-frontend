@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 import { PageTitleModule } from '../shared/page-title/page-title.module';
 
@@ -20,16 +20,14 @@ import { UserServiceService } from 'src/app/services/userService/user-service.se
   templateUrl: './user-security.component.html',
   styleUrls: ['./user-security.component.scss'],
   imports: [
-    CommonModule,
     PageTitleModule,
-    //Angular Material
     MatFormFieldModule,
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule,
-  ],
+    MatButtonModule
+],
   standalone: true,
 })
 export class UserSecurityComponent {
