@@ -1,3 +1,3 @@
 export const environment = {
-  BASE_URL: 'https://kit-api.app.kronusboss.com',
+  BASE_URL: 'https://api-kit.kronusboss.com',
 };
